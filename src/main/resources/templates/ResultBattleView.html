@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
+<form action="result" method="POST">
 
+	<span th:text="${name}"> </span>は<span th:text="${jobs}"> </span>で攻撃した！
+		<input type="hidden" name="jobs" th:value="${jobs}">
+		<input type="hidden" name="name" th:value="${name}">
 </body>
 </html>

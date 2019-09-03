@@ -1,10 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
+<form method="POST" action="result" >
+<h2>キャラ作成</h2>
+<form action="/battle2" method="POST">
+
+	職業：<span th:text="${jobs}"> </span>
+		<input type="hidden" name="jobs" th:value="${jobs}"> </br>
+	名前：<span th:text="${name}"></span><br>
+		<input type="hidden" name="name" th:value="${name}"> </br>
+
+	<input type="submit"  name="command" value="たたかう"><br>
 
 </body>
 </html>
