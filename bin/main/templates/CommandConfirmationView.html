@@ -6,15 +6,21 @@
 </head>
 <body>
 <form method="POST" action="result" >
-<h2>キャラ作成</h2>
-<form action="/battle2" method="POST">
+<h1>キャラ作成</h1>
 
-	職業：<span th:text="${jobs}"> </span>
-		<input type="hidden" name="jobs" th:value="${jobs}"> </br>
-	名前：<span th:text="${name}"></span><br>
-		<input type="hidden" name="name" th:value="${name}"> </br>
+<h2>キャラクター1</h2>
+	職業：<span th:text="${character.get(1)}"> </span>
+		<input type="hidden" name="character" th:value="${character.get(1)}">
 
-	<input type="submit"  name="command" value="たたかう"><br>
+	名前：<span th:text="${character.get(0)}"></span><br>
+		<input type="hidden" name="character" th:value="${character.get(0)}">
 
+	<input type="radio" name="command" value="たたかう">たたかう
+	<input type="radio" name="command" value="かいふく" >かいふく
+	<br>
+
+	<input type="submit"  name="decision" value="決定"><br>
+
+</form>
 </body>
 </html>

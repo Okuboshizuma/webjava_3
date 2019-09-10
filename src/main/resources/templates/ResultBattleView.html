@@ -7,8 +7,18 @@
 <body>
 <form action="result" method="POST">
 
-	<span th:text="${name}"> </span>は<span th:text="${jobs}"> </span>で攻撃した！
-		<input type="hidden" name="jobs" th:value="${jobs}">
-		<input type="hidden" name="name" th:value="${name}">
+	<span th:text="${character.get(0)}"> </span>は<span th:text="${item}"> </span>で<span th:text="${action}"> </span>した！
+		<input type="hidden" name="name" th:value="${character.get(0)}">
+		<input type="hidden" name="item" th:value="${item}">
+		<input type="hidden" name="action" th:value="${action}">
+		<br>
+
+	<span th:text="${damage}"> </span>
+		<input type="hidden" name="damage" th:value="${damage}">
+		<br>
+	残りHP<span th:text="${villan}"> </span>
+		<input type="hidden" name="villan" th:value="${villan}">
+
+</form>
 </body>
 </html>
