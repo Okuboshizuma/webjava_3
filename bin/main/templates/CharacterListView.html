@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>CharacterCreateView</title>
+</head>
+<body>
+<form method="POST" action="battle2">
+
+<h1>キャラクターリスト</h1>
+<h2>キャラクター1</h2>
+		名前：<span th:text="${character.get(0)}"> </span>
+		<input type="hidden" name="character" th:value="${character.get(0)}">
+		<br>
+		職業：<span th:text="${character.get(1)}"> </span>
+		<input type="hidden" name="character" th:value="${character.get(1)}">
+	<br>
+<h2>キャラクター2</h2>
+		名前：<span th:text="${character.get(2)}"> </span>
+		<input type="hidden" name="character" th:value="${character.get(2)}">
+		<br>
+		職業：<span th:text="${character.get(3)}"> </span>
+		<input type="hidden" name="character" th:value="${character.get(3)}">
+
+<h2>キャラクター3</h2>
+		名前：<span th:text="${character.get(4)}"> </span>
+		<input type="hidden" name="character" th:value="${character.get(4)}">
+		<br>
+		職業：<span th:text="${character.get(5)}"> </span>
+		<input type="hidden" name="character" th:value="${character.get(5)}">
+
+<h2>キャラクター4</h2>
+		名前：<span th:text="${character.get(6)}"> </span>
+		<input type="hidden" name="character" th:value="${character.get(6)}">
+		<br>
+		職業：<span th:text="${character.get(7)}"> </span>
+		<input type="hidden" name="character" th:value="${character.get(7)}">
+
+<p><input type="submit" name="submit" value="次へ" /></p>
+
+</form>
+
+<form method="GET" action="battle">
+<p><input type="submit" name="submit" value="キャラを追加する" /></p>
+</form>
+
+</body>
+</html>
