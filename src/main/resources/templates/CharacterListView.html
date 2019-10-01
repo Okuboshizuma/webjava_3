@@ -8,35 +8,42 @@
 <form method="POST" action="battle2">
 
 <h1>キャラクターリスト</h1>
+<th:block th:each="characterData:${character}">
+<div th:block th:if="${#lists.size(character)} ge 1">
 <h2>キャラクター1</h2>
-		名前：<span th:text="${character.get(0)}"> </span>
-		<input type="hidden" name="character" th:value="${character.get(0)}">
+		名前：<span th:text="${characterData.name}"> </span>
+		<input type="hidden" name="character[0].name" th:value="${characterData.name}">
 		<br>
-		職業：<span th:text="${character.get(1)}"> </span>
-		<input type="hidden" name="character" th:value="${character.get(1)}">
-	<br>
+		職業：<span th:text="${characterData.job}"> </span>
+		<input type="hidden" name="character[0].job" th:value="${characterData.job}">
+		<br></div>
+<div th:block th:if="${#lists.size(character)} ge 2">
 <h2>キャラクター2</h2>
-		名前：<span th:text="${character.get(2)}"> </span>
-		<input type="hidden" name="character" th:value="${character.get(2)}">
+		名前：<span th:text="${characterData.name}"> </span>
+		<input type="hidden" name="character[1].name" th:value="${characterData.name}">
 		<br>
-		職業：<span th:text="${character.get(3)}"> </span>
-		<input type="hidden" name="character" th:value="${character.get(3)}">
-
+		職業：<span th:text="${characterData.job}"> </span>
+		<input type="hidden" name="character[1].job" th:value="${characterData.job}">
+		<br></div>
+<div th:block th:if="${#lists.size(character)} ge 3">
 <h2>キャラクター3</h2>
-		名前：<span th:text="${character.get(4)}"> </span>
-		<input type="hidden" name="character" th:value="${character.get(4)}">
+		名前：<span th:text="${characterData.name}"> </span>
+		<input type="hidden" name="character[2].name" th:value="${characterData.name}">
 		<br>
-		職業：<span th:text="${character.get(5)}"> </span>
-		<input type="hidden" name="character" th:value="${character.get(5)}">
-
+		職業：<span th:text="${characterData.job}"> </span>
+		<input type="hidden" name="character[2].job" th:value="${characterData.job}">
+		<br></div>
+<div th:block th:if="${#lists.size(character)} ge 4">
 <h2>キャラクター4</h2>
-		名前：<span th:text="${character.get(6)}"> </span>
-		<input type="hidden" name="character" th:value="${character.get(6)}">
+		名前：<span th:text="${characterData.name}"> </span>
+		<input type="hidden" name="character[3].name" th:value="${characterData.name}">
 		<br>
-		職業：<span th:text="${character.get(7)}"> </span>
-		<input type="hidden" name="character" th:value="${character.get(7)}">
+		職業：<span th:text="${characterData.job}"> </span>
+		<input type="hidden" name="character[3].job" th:value="${characterData.job}">
+		<br></div>
+</th:block>
 
-<p><input type="submit" name="submit" value="次へ" /></p>
+<p><input type="submit" name="submit" value="このメンバーで戦う" /></p>
 
 </form>
 

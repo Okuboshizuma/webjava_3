@@ -5,22 +5,23 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form method="POST" action="result" >
+<form method="POST" action="battle2" >
 <h1>キャラ作成</h1>
-
-<h2>キャラクター1</h2>
-	職業：<span th:text="${character.get(1)}"> </span>
-		<input type="hidden" name="character" th:value="${character.get(1)}">
-
-	名前：<span th:text="${character.get(0)}"></span><br>
-		<input type="hidden" name="character" th:value="${character.get(0)}">
-
+<th:block th:each="characterData:${character}">
+<h2>キャラクター</h2>
+		名前：<span th:text="${characterData.name}"> </span>
+		<input type="hidden" name="character" th:value="${characterData.name}">
+		<br>
+		職業：<span th:text="${characterData.job}"> </span>
+		<input type="hidden" name="character" th:value="${characterData.job}">
+		<br>
 	<input type="radio" name="command" value="たたかう">たたかう
 	<input type="radio" name="command" value="かいふく" >かいふく
-	<br>
-
+		<br>
+</form>
+</th:block>
+<form method="POST" action="result" >
 	<input type="submit"  name="decision" value="決定"><br>
-
 </form>
 </body>
 </html>

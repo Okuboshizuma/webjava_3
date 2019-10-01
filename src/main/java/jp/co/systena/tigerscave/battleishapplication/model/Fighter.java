@@ -9,5 +9,4 @@ public class Fighter extends Job{
     return "やくそう";
    }
 
-
 }
